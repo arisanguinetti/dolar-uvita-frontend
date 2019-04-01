@@ -12,7 +12,7 @@ const useScrapes = () => {
 
   useEffect(function() {
     (async () => {
-      const appPath = process.env.APP_PATH || 'http://localhost:2093';
+      const appPath = 'https://arielsanguinetti.com.ar/dolar-uvita';
       const res = await fetch(`${appPath}/data`);
       const data = await res.json();
       setScrapes(data);

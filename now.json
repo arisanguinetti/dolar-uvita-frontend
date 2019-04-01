@@ -1,15 +1,11 @@
 {
   "version": 2,
   "name": "dolar-uvita-frontend",
-  "alias": ["dolar-uvita.now.sh"],
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
-  "routes": [
+  "alias": "dolar-uvita.now.sh",
+  "builds": [
     {
-      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
-      "headers": { "cache-control": "immutable" }
+      "src": "next.config.js",
+      "use": "@now/next"
     }
-  ],
-  "env": {
-    "APP_PATH": "@app_path"
-  }
+  ]
 }
