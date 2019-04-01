@@ -17,10 +17,8 @@ class Chart extends PureComponent {
     const { scrapes } = this.props;
     const scrapesWithDates = [...scrapes].reverse().map(scrape => ({
       date: formatDate(scrape.date),
-      value: {
-        comprador: scrape.value.comprador.toFixed(2),
-        vendedor: scrape.value.comprador.toFixed(2),
-      },
+      comprador: scrape.value.comprador.toFixed(2),
+      vendedor: scrape.value.vendedor.toFixed(2),
     }));
     return (
       <ResponsiveContainer height={200}>
@@ -35,19 +33,21 @@ class Chart extends PureComponent {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
-          <YAxis domain={['dataMin', 'dataMax']} />
+          <YAxis domain={['auto', 'auto']} />
           <Tooltip />
           <Legend />
           <Line
             type="monotone"
-            dataKey="value.comprador"
+            dataKey="comprador"
+            name="USD en UVA Comprador"
             stroke="#8884d8"
             activeDot={{ r: 8 }}
           />
           <Line
             type="monotone"
-            dataKey="value.vendedor"
-            stroke="#8884d8"
+            dataKey="vendedor"
+            name="USD en UVA Vendedor"
+            stroke="#82ca9d"
             activeDot={{ r: 8 }}
           />
         </LineChart>
