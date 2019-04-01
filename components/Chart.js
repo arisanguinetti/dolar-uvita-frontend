@@ -21,7 +21,7 @@ class Chart extends PureComponent {
       vendedor: scrape.value.vendedor.toFixed(2),
     }));
     return (
-      <ResponsiveContainer height={200}>
+      <ResponsiveContainer height={250}>
         <LineChart
           data={scrapesWithDates}
           margin={{

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Container } from 'react-bootstrap';
 import { ScrapeProvider } from './ScrapeContext';
 
 const useScrapes = () => {
@@ -28,7 +29,7 @@ const Page = ({ children }) => {
         scrapes,
       }}
     >
-      <div className="Page">{children}</div>
+      <Container fluid>{children}</Container>
     </ScrapeProvider>
   );
 };

@@ -9,28 +9,24 @@ import Chart from './Chart';
 const Data = () => {
   const { scrapes } = useContext(ScrapeContext);
   return (
-    <div>
-      <Row>
-        <Col>
-          <h2>Últimos valores de USD en UVA</h2>
-          <Chart scrapes={scrapes.uvaUsd} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h2>Últimos valores UVA</h2>
-          <Table scrapes={scrapes.uva} />
-        </Col>
-        <Col>
-          <h2>Últimos valores USD</h2>
-          <TableObjects scrapes={scrapes.usd} />
-        </Col>
-        <Col>
-          <h2>Últimos valores USD en UVA</h2>
-          <TableObjects scrapes={scrapes.uvaUsd} />
-        </Col>
-      </Row>
-    </div>
+    <Row>
+      <Col lg={12}>
+        <h2>Últimos valores de USD en UVA</h2>
+        <Chart scrapes={scrapes.uvaUsd} />
+      </Col>
+      <Col sm={12} md={4}>
+        <h2>USD en UVA</h2>
+        <TableObjects scrapes={scrapes.uvaUsd} />
+      </Col>
+      <Col sm={12} md={4}>
+        <h2>UVA</h2>
+        <Table scrapes={scrapes.uva} />
+      </Col>
+      <Col sm={12} md={4}>
+        <h2>USD</h2>
+        <TableObjects scrapes={scrapes.usd} />
+      </Col>
+    </Row>
   );
 };
 
