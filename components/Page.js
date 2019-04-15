@@ -7,7 +7,7 @@ const useScrapes = () => {
   const [scrapes, setScrapes] = useState({
     uva: [],
     usd: [],
-    uvaUsd: [],
+    usdUva: [],
   });
 
   useEffect(function() {

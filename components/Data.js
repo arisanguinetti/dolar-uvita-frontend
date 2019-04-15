@@ -8,15 +8,21 @@ import Chart from './Chart';
 
 const Data = () => {
   const { scrapes } = useContext(ScrapeContext);
+  if (!scrapes)
+    return (
+      <div>
+        <h2>Error loading data</h2>
+      </div>
+    );
   return (
     <Row>
       <Col lg={12}>
         <h2>Últimos valores de USD en UVA</h2>
-        <Chart scrapes={scrapes.uvaUsd} />
+        <Chart scrapes={scrapes.usdUva} />
       </Col>
       <Col sm={12} md={4}>
         <h2>USD en UVA</h2>
-        <TableObjects scrapes={scrapes.uvaUsd} />
+        <TableObjects scrapes={scrapes.usdUva} />
       </Col>
       <Col sm={12} md={4}>
         <h2>UVA</h2>
