@@ -15,10 +15,16 @@ import { formatDate } from '../utils/dates';
 class Chart extends PureComponent {
   render() {
     const { scrapes } = this.props;
-    const scrapesWithDates = [...scrapes].reverse().map(scrape => ({
+    if (!scrapes)
+      return (
+        <div>
+          <h2>Error loading data</h2>
+        </div>
+      );
+    const scrapesWithDates = [...scrapes].map(scrape => ({
       date: formatDate(scrape.date),
-      comprador: scrape.value.comprador.toFixed(2),
-      vendedor: scrape.value.vendedor.toFixed(2),
+      comprador: scrape.comprador.toFixed(2),
+      vendedor: scrape.vendedor.toFixed(2),
     }));
     return (
       <ResponsiveContainer height={250}>
