@@ -11,12 +11,16 @@ const Table = ({ scrapes }) => (
       </tr>
     </thead>
     <tbody>
-      {scrapes.slice(0, 10).map(scrape => (
-        <tr key={scrape.date}>
-          <td>{formatDate(scrape.date)}</td>
-          <td>{scrape.value.toFixed(2)}</td>
-        </tr>
-      ))}
+      {scrapes &&
+        scrapes
+          .reverse()
+          .slice(0, 10)
+          .map(scrape => (
+            <tr key={scrape.date}>
+              <td>{formatDate(scrape.date)}</td>
+              <td>{scrape.value.toFixed(2)}</td>
+            </tr>
+          ))}
     </tbody>
   </TableBootstrap>
 );
